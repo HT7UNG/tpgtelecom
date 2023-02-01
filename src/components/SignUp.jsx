@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SignUp = () => {
+const SignUp = ({ setUsers }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -15,7 +15,13 @@ const SignUp = () => {
       alert("Passwords do not match");
       return;
     }
-
+    if (email && password && fullName && ageRange) {
+      console.log("Success");
+      const newUser = { email, password };
+      setUsers((users) => [...users, newUser]);
+    } else {
+      console.log("Fail");
+    }
     // Add logic to submit the form data to the server here
   };
 
