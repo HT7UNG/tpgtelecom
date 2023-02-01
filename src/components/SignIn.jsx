@@ -8,6 +8,7 @@ const SignIn = ({ users }) => {
     e.preventDefault();
     console.log(users);
     // Add logic for submitting the form
+
     //check if in users
     if (
       users.some((elem) => elem.email === email && elem.password === password)
@@ -19,21 +20,25 @@ const SignIn = ({ users }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        placeholder="Email Address"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
+    <form className="signin" onSubmit={handleSubmit}>
+      <div>
+        <input
+          type="email"
+          placeholder="Email Address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+      </div>
+      <div>
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+      </div>
       <button type="submit">Sign In</button>
     </form>
   );
