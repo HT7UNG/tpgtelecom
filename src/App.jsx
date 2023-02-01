@@ -17,8 +17,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <SignUp users={users} setUsers={setUsers} />
       <SignIn users={users} />
+      <div className="fake-forget">Forgotten password?</div>
+      <SignUp users={users} setUsers={setUsers} />
     </div>
   );
 };
