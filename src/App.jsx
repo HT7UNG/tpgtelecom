@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div className="App">
       <SignUp />
-      <SignIn />
+      <SignIn users={users} />
     </div>
   );
 };

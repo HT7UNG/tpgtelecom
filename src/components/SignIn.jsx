@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 
-const SignIn = () => {
+const SignIn = (users) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add logic for submitting the form
-    console.log(email, password);
+    //check if in users
+    if (
+      users.users.some(
+        //clean up later - destructure?
+        (elem) => elem.email === email && elem.password === password
+      )
+    ) {
+      console.log("Success");
+    } else {
+      console.log("Fail");
+    }
   };
 
   return (
