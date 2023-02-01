@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <SignUp />
+      <SignUp handleSignUp={setUsers} users={users} />
       <SignIn users={users} />
     </div>
   );
