@@ -6,7 +6,6 @@ const SignIn = ({ users }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(users);
     // Add logic for submitting the form
 
     //check if in users

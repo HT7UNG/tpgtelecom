@@ -44,5 +44,6 @@ connected to the internet from day 1 and you can power on through interruptions 
 nbn connection today with Vodafone nbn™ - winner of Australia’s best fixed broadband provider at the 
 Telecommunication Industry’s CommsDay Edison Awards 2020.</p>
 <p>Sign up online below or call us on <a href="tel:1300808808">1300 808 808.</a></p>`;
+
 //Expand "Terms and Conditions" accordion
 document.querySelector(`[data-testid="tncs-title"`).click();
