@@ -9,6 +9,8 @@ const SignUp = ({ setUsers }) => {
     fullName: "",
     ageRange: "",
   });
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleInputChange = (event) => {
     setFormData({
@@ -32,13 +34,16 @@ const SignUp = ({ setUsers }) => {
       formData.fullName &&
       formData.ageRange
     ) {
-      console.log("Success");
+      //basic validation for now
+      setErrorMessage("");
+      setSuccessMessage("Signup successful! You may now close this.");
       const newUser = { email: formData.email, password: formData.password };
+      //save to 'database'
       setUsers((users) => [...users, newUser]);
     } else {
-      console.log("Fail");
+      setSuccessMessage("");
+      setErrorMessage("Signup failed, please fill out all the fields!");
     }
-    // Add logic to submit the form data to the server here
   };
 
   return (
@@ -50,6 +55,10 @@ const SignUp = ({ setUsers }) => {
         <div className="modal-overlay">
           <div className="modal-content">
             <form onSubmit={handleSubmit}>
+              <button className="x" onClick={() => setIsOpen(false)}>
+                x
+              </button>
+
               <h2>Sign Up</h2>
               <div>
                 <input
@@ -108,9 +117,17 @@ const SignUp = ({ setUsers }) => {
                   <option value="45+">45+</option>
                 </select>
               </div>
+              {successMessage && (
+                <p style={{ color: "green", fontWeight: 600 }}>
+                  {successMessage}
+                </p>
+              )}
+              {errorMessage && (
+                <p style={{ color: "red", fontWeight: 600 }}>{errorMessage}</p>
+              )}
+
               <button type="submit">Sign Up</button>
             </form>
-            <button onClick={() => setIsOpen(false)}>Close</button>
           </div>
         </div>
       )}

@@ -7,7 +7,7 @@ body {
 
 .App {
   text-align: center;
-  width: 400px;
+  width: 300px;
 }
 
 form {
@@ -80,6 +80,7 @@ form .form-age-label {
   width: 500px;
   max-width: 100%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  position: relative;
 }
 
 .modal-button {
@@ -90,4 +91,19 @@ form .form-age-label {
   cursor: pointer;
   color: #007bff;
   font-weight: 600;
+}
+
+.x {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+}
+
+@media (min-width: 480px) {
+  .App {
+    width: 400px;
+  }
 }

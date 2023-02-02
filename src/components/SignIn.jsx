@@ -13,9 +13,9 @@ const SignIn = ({ users }) => {
     if (
       users.some((elem) => elem.email === email && elem.password === password)
     ) {
-      console.log("Success");
+      alert("Sign in Successful");
     } else {
-      console.log("Fail");
+      alert("Sign in failed");
     }
   };
 
